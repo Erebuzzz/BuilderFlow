@@ -1,5 +1,5 @@
 id: 88892245-f733-4b7c-a185-c1983eb4d9e0
-name: 'Zerve Hackathon: Retention Analysis'
+name: 'BuilderFlow'
 project_id: ee014f27-986c-481f-85c8-eef4b684313c
 global_imports: []
 python_global_imports: ''
@@ -513,4 +513,32 @@ layers:
   id: f9e8fe44-b4cc-401d-ba07-103f3bb04de1
   name: Development
   type: 1
+- blocks:
+  - auto_size: false
+    canvas_id: 88892245-f733-4b7c-a185-c1983eb4d9e0
+    compute_settings: null
+    description: 'Daily retention risk scoring job: re-scores all users with calibrated
+      XGBoost model, assigns risk tiers, produces dashboard, and saves timestamped
+      CSV output'
+    height: 1000
+    id: d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f90
+    layer_id: b7a3c4d1-2e5f-4a8b-9c1d-3f6e7a8b9c0d
+    name: retention_scoring_job
+    parent_id: null
+    properties:
+      schedule:
+        frequency: daily
+        time: '06:00'
+        timezone: UTC
+    status: 1
+    type: 1
+    variables: null
+    width: 1600
+    x: 0
+    y: 0
+  canvas_id: 88892245-f733-4b7c-a185-c1983eb4d9e0
+  edges: []
+  id: b7a3c4d1-2e5f-4a8b-9c1d-3f6e7a8b9c0d
+  name: ScheduledJob
+  type: 3
 assets: []
