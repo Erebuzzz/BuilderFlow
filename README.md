@@ -9,7 +9,7 @@ We analyzed 226.6K behavioral events from 1,472 users to identify what separates
 ## 🏗️ Project Structure
 
 ```
-88892245-f733-4b7c-a185-c1983eb4d9e0/
+builderflow/
 ├── canvas.yaml                    # Canvas definition & DAG
 ├── Development/                   # Main analysis layer (20 blocks)
 │   ├── project_config_setup.py         # Config & data loading
@@ -97,7 +97,7 @@ flowchart TD
 
 ## 📝 How to Reproduce
 
-See [REPRODUCTION_GUIDE.md](88892245-f733-4b7c-a185-c1983eb4d9e0/REPRODUCTION_GUIDE.md) for step-by-step instructions.
+See [REPRODUCTION_GUIDE.md](builderflow/REPRODUCTION_GUIDE.md) for step-by-step instructions.
 
 ## 🛠️ Tech Stack
 
