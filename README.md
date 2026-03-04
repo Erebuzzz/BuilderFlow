@@ -29,6 +29,56 @@ We analyzed 226.6K behavioral events from 1,472 users to identify what separates
 └── REPRODUCTION_GUIDE.md           # Step-by-step reproduction guide
 ```
 
+## 🔄 Pipeline Architecture
+
+```mermaid
+flowchart TD
+    A["📂 project_config_setup"] --> B["🔄 load_and_prepare_cohort"]
+    B --> C["⚙️ feature_engineering_7d_window"]
+    C --> D["📊 feature_schema_and_heatmap"]
+
+    D --> E1["📈 eda_event_taxonomy"]
+    D --> E2["📈 eda_user_timelines"]
+    D --> E3["📈 eda_retention_by_behavior"]
+
+    D --> F["🧩 kmeans_archetype_clustering"]
+    D --> G["🧮 compute_labels_and_features"]
+
+    F --> H["🌲 xgboost_bayesian_opt_model"]
+    G --> I["📏 train_baseline_and_main_models"]
+    G --> J["🧩 behavioral_clustering"]
+    G --> K["🔬 propensity_impact_analysis"]
+
+    H --> L["🔍 shap_advanced_analysis"]
+    H --> M["🎯 uplift_intervention_scoring"]
+    F --> M
+
+    I --> N["📐 calibration_and_comparison_charts"]
+    I --> O["🔍 shap_analysis"]
+    O --> P["📊 executive_summary_charts"]
+    J --> P
+    I --> P
+    I --> K
+
+    M --> Q["📁 scored_user_table.csv"]
+
+    subgraph Scheduled["⏰ ScheduledJob Layer"]
+        R["🔄 retention_scoring_job"]
+        R --> S["📁 scored_users_latest.csv"]
+    end
+
+    H -.->|"model + calibrator"| R
+    F -.->|"archetypes"| R
+
+    style A fill:#2d2d30,stroke:#A1C9F4,color:#fbfbff
+    style C fill:#2d2d30,stroke:#8DE5A1,color:#fbfbff
+    style F fill:#2d2d30,stroke:#D0BBFF,color:#fbfbff
+    style H fill:#2d2d30,stroke:#FFB482,color:#fbfbff
+    style M fill:#2d2d30,stroke:#ffd400,color:#fbfbff
+    style R fill:#2d2d30,stroke:#17b26a,color:#fbfbff
+    style Scheduled fill:#1a1a1d,stroke:#17b26a,color:#fbfbff
+```
+
 ## 🔑 Key Results
 
 | Metric | Value |
