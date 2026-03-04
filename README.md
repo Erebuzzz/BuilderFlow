@@ -97,7 +97,7 @@ flowchart TD
 
 ## 📝 How to Reproduce
 
-See [REPRODUCTION_GUIDE.md](REPRODUCTION_GUIDE.md) for step-by-step instructions.
+See [REPRODUCTION_GUIDE.md](88892245-f733-4b7c-a185-c1983eb4d9e0/REPRODUCTION_GUIDE.md) for step-by-step instructions.
 
 ## 🛠️ Tech Stack
 
