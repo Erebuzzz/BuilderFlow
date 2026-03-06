@@ -95,7 +95,7 @@ flowchart TD
 
 ## 🚀 Deployed Functionality
 
-**Scheduled Job**: Daily retention scoring pipeline that re-scores all users, assigns risk tiers, and outputs CSV for the product team.
+**Interactive Streamlit Dashboard**: A live web application that visualizes retention risk distributions across behavioral archetypes and provides a prioritized list of users for targeting.
 
 ## 📝 How to Reproduce
 

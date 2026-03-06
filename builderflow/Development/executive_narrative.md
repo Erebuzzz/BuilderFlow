@@ -88,14 +88,13 @@ Based on uplift estimation with archetype-level calibration, persuadability scor
 
 ## 🏗️ Deployed Functionality
 
-**Scheduled Job:** A daily-running retention scoring pipeline that:
-- Re-scores all users with the calibrated XGBoost model
-- Assigns risk tiers (Low / Medium / High / Critical)
-- Produces an archetype-level dashboard with retention predictions
-- Saves timestamped CSV output (`scored_users_YYYYMMDD_HHMMSS.csv`)
-- Identifies top at-risk users for prioritized intervention
+**Interactive Streamlit Dashboard:** A live web application deployed on Zerve that:
+- Reads the scored user retention data and calculated uplift metrics
+- Visualizes the retention risk distribution across behavioral archetypes using interactive Plotly charts
+- Displays the overall risk tier breakdown (Low / Medium / High / Critical)
+- Provides a prioritized targeting list of the top 50 users showing the highest potential uplift for the "Agent → Block UI" intervention
 
-This enables the product team to monitor user health in real-time and trigger intervention campaigns based on predicted risk.
+This enables the product and marketing teams to monitor user health dynamically and immediately action high-priority interventions.
 
 ---
 

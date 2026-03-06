@@ -52,7 +52,7 @@ We applied zero-variance filtering, removed features with correlation > 0.92, an
 
 ### Deployed Functionality
 
-We added a **Scheduled Job** layer: a daily-running pipeline that re-scores all users with the calibrated model, assigns risk tiers (Low / Medium / High / Critical), and saves a timestamped CSV for the product team.
+We deployed a **Streamlit Web Application** on Zerve. It acts as an interactive risk dashboard that reads the scored retention data, visualizes risk distributions via Plotly across our six behavioral archetypes, and provides a prioritized, actionable list of the top 50 users who need immediate intervention. 
 
 ---
 
